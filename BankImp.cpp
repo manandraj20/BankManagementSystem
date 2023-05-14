@@ -32,14 +32,14 @@ void account::show_account(int j) const {
 		cout << "\t\t\t\t Account Type: " << acc_type << endl << endl;
 		cout << "\t\t\t\t Account Balance: " << deposit << endl;
 	}
+	else {
+		cout<<"Account no. does not match.";
+	}
 	cout << endl << endl;
 }
 void account::modify(string t, int j) {
 	acc_no = j;
-	string temp;
-	temp = acc_type;
 	acc_type = t;
-	T_acc = T_acc - 1;
 	cout << "\t\t\t\t Modify Account Holder Name: ";
 	cin >> name;
 	cout << endl;
@@ -56,16 +56,29 @@ void account::close(int j) {
 		deposit = 0;
 		T_acc = T_acc - 1;
 	}
+	else {
+		cout<<"Account no. does not match.";
+	}
 }
 void account::deposits(int x, int j) {
 	if (j == acc_no) {
 		deposit = deposit + x;
 	}
+	else {
+		cout<<"Account no. does not match.";
+	}
 }
 void account::withdraws(int x, int j) {
 	if (j == acc_no) {
+		if(x>deposit)
+		cout<<"Insufficient Balance"<<endl;
+		else{
 		deposit = deposit - x;
 		cout << "\t\t\t\t Amount Withdrawed Successfully..." << endl;
+		}
+	}
+	else {
+		cout<<"Account no. does not match.";
 	}
 }
 void Checking_acc::withdraws(int x, int j) {
@@ -95,6 +108,9 @@ void Checking_acc::withdraws(int x, int j) {
 			cout << "\t\t\t\t Amount Withdrawed Successfully..." << endl;
 		}
 	}
+	else {
+		cout<<"Account no. does not match.";
+	}
 }
 void Saving_acc::withdraws(int x, int j) {
 	if (j == acc_no) {
@@ -107,6 +123,9 @@ void Saving_acc::withdraws(int x, int j) {
 			deposit = deposit - x;
 			cout << "\t\t\t\t Amount Withdrawed Successfully..." << endl;
 		}
+	}
+	else {
+		cout<<"Account no. does not match.";
 	}
 }
 void account::display() const {
