@@ -35,16 +35,16 @@ public:
 		acc_type = Atype;
 		T_acc++;
 	}
-	void create_account(string);
-	void show_account(int) const;
+	void create_account(string);                // The create_account function creates a new account with the provided details.
+	void show_account(int) const;               // The show_account function displays the details of a specific account.
 	void modify(string, int);
 	void close(int);
-	void deposits(int, int);
+	void deposits(int, int);                    // The deposits function allows depositing money into an account.
 	virtual void withdraws(int, int);
-	void display() const;
-	int getA_no() const;
-	int getDep() const;
-	string getType() const;
+	void display() const;                       // The display function displays the account details.
+	int getA_no() const;                        // The getA_no function returns the account number.
+	int getDep() const;                         // The getDep function returns the deposit amount.
+	string getType() const;                     // The getType function returns the account type.
 	static int getT_acc();
 };
 class Checking_acc : public account {
